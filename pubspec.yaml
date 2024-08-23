@@ -23,4 +23,5 @@ flutter:
 flutter_icons: 
   android : true
   ios     : true
+  remove_alpha_ios: true
   image_path: "assets/Icons/App_Icon.png"
