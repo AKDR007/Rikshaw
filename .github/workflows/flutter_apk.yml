@@ -1,0 +1,69 @@
+name: Build APK
+
+on:
+
+  # On Invoking Push Function in Git from Local Repo
+  
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Setting up Flutter to the Workflow 
+
+    - name: Set up Flutter
+      uses: subosito/flutter-action@v2.16.0
+      with:
+        
+        # App Built on the Flutter Version  ( In this case it is 3.24.1 ) 
+        # and Channel is Stable for Stable Flutter Version
+
+        flutter-version: 3.24.1
+        channel: stable
+
+    # Installing Required Dependencies
+    
+    - name: Install dependencies
+      run: flutter pub get
+
+    # Cleaning the Old Build Files
+
+    - name: Flutter clean 
+      run: flutter clean
+        
+    # Checking out Packages for Latest Release
+
+    - name: Flutter check outdated packages
+      run: flutter pub outdated
+    
+    # Upgrading Packages if New Version is Released
+
+    - name: Flutter Update Outdated packages
+      run: flutter pub upgrade --major-versions
+
+    # Building Release Verison of APK
+
+    - name: Build APK
+      run: flutter build apk --release
+    
+    # Renaming the APK file from app-release.apk to Rikshaw.apk
+
+    - name: Rename APK
+      run: mv build/app/outputs/flutter-apk/app-release.apk build/app/outputs/flutter-apk/Rikshaw.apk
+
+
+    # Uploading to the APK Directly to  Release Page
+
+    - name: Upload APK
+      uses: actions/upload-artifact@v3
+      with:
+        name: release-apk
+        path: build/app/outputs/flutter-apk/Rikshaw.apk
+
