@@ -1,7 +1,7 @@
 name: rikshaw
 description: "A new Flutter project."
 publish_to: 'none'
-version: 0.1.0
+version: 0.0.1
 
 environment:
   sdk: ^3.5.1
@@ -24,4 +24,5 @@ flutter:
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/Icons/"
+  remove_alpha_ios: true
+  image_path: "assets/Icons/App_Icon.png"
