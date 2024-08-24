@@ -1,3 +1,3 @@
 # Rikshaw
 
-A new Flutter project
+Sigma Branch for Experimental use
