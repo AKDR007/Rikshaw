@@ -77,6 +77,11 @@ jobs:
       - name: Flutter Update Outdated packages
         run: flutter pub upgrade --major-versions
 
+      # Updating the App Icon
+
+      - name: App Icon Update
+        run: flutter pub run flutter_launcher_icons
+
       # Building Release Verison of APK
 
       - name: Build APK
