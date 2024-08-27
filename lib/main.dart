@@ -36,13 +36,13 @@ class SplashScreen extends StatelessWidget {
           children: [
             // Add your splash screen logo or image here
             // Image.asset(
-            //   'assets/Icons/App_Icon.png', // Replace with your logo
+            //   'assets/Icons/Loading_Screen.webp', // Replace with your logo
             //   height: 120,
             // ),
-            CachedNetworkImage(
-                imageUrl:
-                    "https://www.shutterstock.com/image-vector/vector-design-auto-rickshaw-driver-260nw-2316837373.jpg"),
-            SizedBox(height: 20),
+            // CachedNetworkImage(
+            //     imageUrl:
+            //         "https://www.shutterstock.com/image-vector/vector-design-auto-rickshaw-driver-260nw-2316837373.jpg"),
+            // SizedBox(height: 20),
             // You can also add a loading indicator or text
             CircularProgressIndicator(
               color: Colors.white,
