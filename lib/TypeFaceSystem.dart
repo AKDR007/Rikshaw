@@ -8,5 +8,5 @@ class TextStyles {
   // Google Font Style
 
   static TextStyle notoSansMono = GoogleFonts.notoSansMono(
-      fontWeight: FontWeight.bold, fontSize: 20, color: Colors.black);
+      fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white);
 }
