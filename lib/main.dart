@@ -37,8 +37,8 @@ class SplashScreen extends StatelessWidget {
             // Add your splash screen logo or image here
             Image.asset(
               'assets/Icons/Loading_Screen.webp', // Replace with your logo
-              height: 120,
-              width: 120,
+              // height: 250,
+              // width: 250,
             ),
             // CachedNetworkImage(
             //     imageUrl:
