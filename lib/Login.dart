@@ -4,16 +4,32 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:rikshaw/TypeFaceSystem.dart';
 
 class Login extends StatelessWidget {
+  const Login({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
+    return const MaterialApp(
+      // debugShowCheckedModeBanner: false,
       home: LoginPage(),
     );
   }
 }
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+
+  @override
+  _LoginPageState createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  bool _obscureText = true; // To manage the password visibility
+
+  void _togglePasswordVisibility() {
+    setState(() {
+      _obscureText = !_obscureText; // Toggle the visibility
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,15 +46,15 @@ class LoginPage extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     color: Colors.black87,
                   )),
-              SizedBox(height: 10),
-              Text(
+              const SizedBox(height: 10),
+              const Text(
                 "Welcome back you've been missed!",
                 style: TextStyle(
                   fontSize: 18,
                   color: Colors.black54,
                 ),
               ),
-              SizedBox(height: 40),
+              const SizedBox(height: 40),
 
               // Username Field
               TextField(
@@ -51,11 +67,11 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
 
               // Password Field
               TextField(
-                obscureText: true,
+                obscureText: _obscureText,
                 decoration: InputDecoration(
                   labelText: 'Password',
                   filled: true,
@@ -63,7 +79,12 @@ class LoginPage extends StatelessWidget {
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(30),
                   ),
-                  suffixIcon: Icon(Icons.visibility_off),
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                      _obscureText ? Icons.visibility_off : Icons.visibility,
+                    ),
+                    onPressed: _togglePasswordVisibility,
+                  ),
                 ),
               ),
 
@@ -72,60 +93,32 @@ class LoginPage extends StatelessWidget {
                 alignment: Alignment.centerRight,
                 child: TextButton(
                   onPressed: () {},
-                  child: Text(
+                  child: const Text(
                     'Recovery Password',
                     style: TextStyle(color: Colors.black54),
                   ),
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
 
               // Sign In Button
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {},
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 15.0),
-                    child: Text('Sign In', style: TextStyles.notoSansMono),
-                  ),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.black,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
                     ),
                   ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 15.0),
+                    child: Text('Sign In', style: TextStyles.notoSansMono),
+                  ),
                 ),
               ),
 
-              SizedBox(height: 20),
-              // Or continue with
-              Center(
-                child: Text(
-                  'Or continue with',
-                  style: TextStyle(color: Colors.black54),
-                ),
-              ),
-              SizedBox(height: 20),
-
-              // Social Media Icons
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(
-                    icon: Icon(Icons.g_translate, color: Colors.red),
-                    onPressed: () {},
-                  ),
-                  IconButton(
-                    icon: Icon(Icons.apple, color: Colors.black),
-                    onPressed: () {},
-                  ),
-                  IconButton(
-                    icon: Icon(Icons.facebook, color: Colors.blue),
-                    onPressed: () {},
-                  ),
-                ],
-              ),
               const SizedBox(height: 20),
 
               // Register now
