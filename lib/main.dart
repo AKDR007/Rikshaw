@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:rikshaw/Register.dart';
 import 'package:rikshaw/TypeFaceSystem.dart';
 import 'package:rikshaw/Login.dart';
 import 'dart:async';
@@ -119,6 +120,10 @@ class Fs extends StatelessWidget {
                     ),
                     onPressed: () {
                       // Handle Register action
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Register()));
                     },
                     child: Text(
                       'Register',
