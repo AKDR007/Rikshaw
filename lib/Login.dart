@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:rikshaw/Register.dart';
 import 'package:rikshaw/TypeFaceSystem.dart';
 
 class Login extends StatelessWidget {
@@ -136,7 +137,10 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
-                            // Handle register tap
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const Register()));
                           },
                       ),
                     ],

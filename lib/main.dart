@@ -42,10 +42,22 @@ class SplashScreen extends StatelessWidget {
             Image.asset(
               'assets/Icons/Loading_Screen.webp', // Replace with your logo
             ),
-
+            const SizedBox(
+              height: 40,
+            ),
+            Text(
+              "வணக்கம் வேலூர்",
+              style: GoogleFonts.notoSansMono(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(
+              height: 40,
+            ),
             // You can also add a loading indicator or text
             const CircularProgressIndicator(
-              color: Colors.white,
+              color: Colors.black,
             ),
           ],
         ),
@@ -81,25 +93,25 @@ class Fs extends StatelessWidget {
               const SizedBox(height: 40),
 
               // Title
-              Text(
-                'Discover your Dream job Here',
-                textAlign: TextAlign.center,
-                style: GoogleFonts.notoSansMono(
-                    color: Colors.black,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 16),
+              // Text(
+              //   'Discover your Dream job Here',
+              //   textAlign: TextAlign.center,
+              //   style: GoogleFonts.notoSansMono(
+              //       color: Colors.black,
+              //       fontSize: 20,
+              //       fontWeight: FontWeight.bold),
+              // ),
+              // const SizedBox(height: 16),
 
-              // Subtitle
-              Text(
-                'Explore all the most exiting job roles based on your interest And study major',
-                textAlign: TextAlign.center,
-                style: GoogleFonts.notoSansMono(
-                    color: Colors.grey[600],
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold),
-              ),
+              // // Subtitle
+              // Text(
+              //   'Explore all the most exiting job roles based on your interest And study major',
+              //   textAlign: TextAlign.center,
+              //   style: GoogleFonts.notoSansMono(
+              //       color: Colors.grey[600],
+              //       fontSize: 20,
+              //       fontWeight: FontWeight.bold),
+              // ),
               const SizedBox(height: 60),
 
               // Buttons
