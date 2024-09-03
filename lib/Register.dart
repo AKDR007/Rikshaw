@@ -38,10 +38,11 @@ class _RegisterPageState extends State<RegisterPage>
     });
   }
 
-  final TextEditingController _Name = TextEditingController();
+  final TextEditingController _name = TextEditingController();
   final TextEditingController _mail = TextEditingController();
   final TextEditingController _pwd = TextEditingController();
-  final TextEditingController _Cpwd = TextEditingController();
+  final TextEditingController _cpwd = TextEditingController();
+  final TextEditingController _mobCont = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -72,15 +73,11 @@ class _RegisterPageState extends State<RegisterPage>
                   ),
 
                   const SizedBox(height: 40),
-                  // SingleChildScrollView(
-                  //   scrollDirection: Axis.vertical,
-                  //   padding: const EdgeInsets.all(25),
-                  //   child:
                   Column(
                     children: [
                       // Username Field
                       TextField(
-                        controller: _Name,
+                        controller: _name,
                         decoration: InputDecoration(
                           labelText: 'Name',
                           filled: true,
@@ -91,7 +88,18 @@ class _RegisterPageState extends State<RegisterPage>
                         ),
                       ),
                       const SizedBox(height: 20),
-
+                      TextField(
+                        controller: _mobCont,
+                        decoration: InputDecoration(
+                            labelText: "Mobile",
+                            filled: true,
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(30))),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
                       // Email Field
                       TextField(
                         controller: _mail,
@@ -130,7 +138,7 @@ class _RegisterPageState extends State<RegisterPage>
 
                       // Confirm Password Field
                       TextField(
-                        controller: _Cpwd,
+                        controller: _cpwd,
                         obscureText: _obscureText,
                         decoration: InputDecoration(
                           labelText: 'Confirm Password',
@@ -151,7 +159,10 @@ class _RegisterPageState extends State<RegisterPage>
                       ),
                     ],
                   ),
-                  // ),
+
+                  const SizedBox(
+                    height: 20,
+                  ),
 
                   const SizedBox(height: 30),
 
@@ -159,12 +170,7 @@ class _RegisterPageState extends State<RegisterPage>
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {
-                        print(_Name.text);
-                        print(_mail.text);
-                        print(_pwd.text);
-                        print(_Cpwd.text);
-                      },
+                      onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.black,
                         shape: RoundedRectangleBorder(
@@ -185,8 +191,24 @@ class _RegisterPageState extends State<RegisterPage>
           // Register Tab
 
           // Login Tab
-          Center(
-            child: Text('Login Page Content Here'),
+          const Center(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 40,
+                ),
+                SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Icon(
+                        Icons.supervised_user_circle_outlined,
+                        size: 100,
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
         ],
       ),
