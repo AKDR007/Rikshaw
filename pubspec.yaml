@@ -8,10 +8,12 @@ environment:
 
 dependencies:
   cached_network_image: ^3.4.1
+  clock: ^1.1.1
   flutter:
     sdk: flutter
   flutter_launcher_icons: ^0.13.1
   google_fonts: ^6.2.1
+  google_maps_flutter: ^2.9.0
   http: ^1.2.2
 
 dev_dependencies:
@@ -21,12 +23,12 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  assets:
-    - "assets/Icons/App_Icon.png"
-    - "assets/Icons/Loading_Screen.webp"
+  # assets:
+  #   - "assets/Icons/App_Icon.png"
+  #   - "assets/Icons/Loading_Screen.webp"
 
-flutter_icons: 
-  android : true
-  ios     : true
-  remove_alpha_ios: true
-  image_path: "assets/Icons/App_Icon.png"
+# flutter_icons: 
+#   android : true
+#   ios     : true
+#   remove_alpha_ios: true
+#   image_path: "assets/Icons/App_Icon.png"

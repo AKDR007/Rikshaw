@@ -1,16 +1,18 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:rikshaw/Register.dart';
-import 'package:rikshaw/TypeFaceSystem.dart';
+import 'package:rikshaw/Authentication/Signup.dart';
+import 'package:rikshaw/Authentication/PasswordRecov.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+    return const Scaffold(
+      body: LoginPage(),
     );
   }
 }
@@ -33,6 +35,7 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    // final TD = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
       body: Center(
         child: Padding(
@@ -40,31 +43,33 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              // const Icon(
+              //   Icons.electric_rickshaw,
+              //   size: 50,
+              // ),
+
               // Header Text
-              Text('Hello Again!',
+              Text('Welcome Back, Rider!',
                   style: GoogleFonts.notoSansMono(
-                    fontSize: 32,
+                    fontSize: 25,
                     fontWeight: FontWeight.bold,
-                    color: Colors.black87,
+                    color: Colors.black,
                   )),
-              const SizedBox(height: 10),
-              const Text(
-                "Welcome back you've been missed!",
-                style: TextStyle(
-                  fontSize: 18,
-                  color: Colors.black54,
-                ),
-              ),
+
+              // const SizedBox(height: 10),
+
               const SizedBox(height: 40),
 
               // Username Field
               TextField(
                 decoration: InputDecoration(
-                  labelText: 'Enter username',
+                  hintText: 'Enter Mail/Mob',
+                  // hintStyle: TextStyle(color: TD ? Colors.white : Colors.black),
+                  hintStyle: const TextStyle(color: Colors.black),
                   filled: true,
                   fillColor: Colors.white,
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(30),
+                    borderRadius: BorderRadius.circular(20),
                   ),
                 ),
               ),
@@ -74,11 +79,12 @@ class _LoginPageState extends State<LoginPage> {
               TextField(
                 obscureText: _obscureText,
                 decoration: InputDecoration(
-                  labelText: 'Password',
+                  hintText: 'Password',
                   filled: true,
+                  hintStyle: const TextStyle(color: Colors.black),
                   fillColor: Colors.white,
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(30),
+                    borderRadius: BorderRadius.circular(20),
                   ),
                   suffixIcon: IconButton(
                     icon: Icon(
@@ -93,9 +99,14 @@ class _LoginPageState extends State<LoginPage> {
               Align(
                 alignment: Alignment.centerRight,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const PasswordRecovery()));
+                  },
                   child: const Text(
-                    'Recovery Password',
+                    'Forgot Password?',
                     style: TextStyle(color: Colors.black54),
                   ),
                 ),
@@ -115,7 +126,11 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 15.0),
-                    child: Text('Sign In', style: TextStyles.notoSansMono),
+                    child: Text('Start your Ride',
+                        style: GoogleFonts.notoSansMono(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20)),
                   ),
                 ),
               ),
@@ -140,7 +155,7 @@ class _LoginPageState extends State<LoginPage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const Register()));
+                                    builder: (context) => const Signup()));
                           },
                       ),
                     ],
