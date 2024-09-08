@@ -79,8 +79,8 @@ jobs:
             
       # Updating the App Icon
   
-      - name: App Icon Update
-        run: flutter pub run flutter_launcher_icons
+      # - name: App Icon Update
+      #   run: flutter pub run flutter_launcher_icons
 
       # Building Release Verison of APK
 
