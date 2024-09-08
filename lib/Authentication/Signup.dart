@@ -3,6 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:rikshaw/Activities/MapActivity.dart';
+import 'package:rikshaw/Activities/RideAcitivity.dart';
 import 'package:rikshaw/TypeFaceSystem.dart';
 
 const double BSX = 10;
@@ -179,10 +180,10 @@ class _SignupPageState extends State<SignupPage>
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const Mapactivity()));
+                                builder: (context) => const RideActivity()));
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black,
+                        backgroundColor: Colors.green[200],
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(BSX),
                         ),
@@ -190,7 +191,7 @@ class _SignupPageState extends State<SignupPage>
                       child: Padding(
                         padding: const EdgeInsets.symmetric(vertical: 15.0),
                         child: Text(
-                          'Signup',
+                          'Sign up',
                           style: TextStyles.notoSansMono,
                         ),
                       ),
@@ -318,9 +319,14 @@ class _SignupPageState extends State<SignupPage>
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Mapactivity()));
+                      },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black,
+                        backgroundColor: Colors.green[200],
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(BSX),
                         ),
@@ -328,7 +334,7 @@ class _SignupPageState extends State<SignupPage>
                       child: Padding(
                         padding: const EdgeInsets.symmetric(vertical: 15.0),
                         child: Text(
-                          'Signup',
+                          'Sign up',
                           style: TextStyles.notoSansMono,
                         ),
                       ),
