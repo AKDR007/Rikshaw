@@ -2,6 +2,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:rikshaw/Activities/MapActivity.dart';
 import 'package:rikshaw/TypeFaceSystem.dart';
 
 const double BSX = 10;
@@ -174,7 +175,12 @@ class _SignupPageState extends State<SignupPage>
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Mapactivity()));
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.black,
                         shape: RoundedRectangleBorder(
