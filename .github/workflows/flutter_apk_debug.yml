@@ -32,7 +32,7 @@ jobs:
       # Change this Version if you are Porting 
       # the Project to Latest Flutter Version 
       
-      FLUTTER_VERSION: 3.24.1
+      FLUTTER_VERSION: 3.24.2
 
     steps:
       
